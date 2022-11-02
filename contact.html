@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <header>
-        <div>
-            <div class="wrapper">
-                <div class="logo">
-                    <img src="images/logo-no-background.png" alt="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Easy As Pie</title>
+        <link rel="stylesheet" href="main.css">
+        <script>
+            function submit_review() {
+                const obj = document.getElementById("name");
+                let name = obj.value;
+                if (name.length < 1) {
+                    alert("You forgot to leave a recipe!");
+                }
+                else {
+                    obj.value = "";
+                    alert("Thanks for submitting, " + name + "!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html"><img src="images/logo-no-background.png" alt="Easy As Pie"></a>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="recipe.html">recipe</a></li>
+                <li><a href="toppings.html">toppings</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <header>
+
+        </header>
+        <main>
+            <form>
+                <h1>Recipe Recommendation!</h1>
+                <div class="login">
+                    <input id="name" type="text" placeholder="Your Name" class="input">
+                    <input id="email" type="text" placeholder="Your Email Address" class="input">
                 </div>
-                <ul class="nav-area">
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="recipe.html">recipe</a></li>
-                    <li><a href="toppings.html">toppings</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
-            </div>
-    </header>
-    <div class="contact-form" method="post" action="">
-        <div class="container2">
-            <p>RECIPE RECOMMENDATIONS!</p>
-            
-            <div class="login">
-              <input type="text" placeholder="Your Name" class="input">
-              <input type="text" placeholder="Your Email Address" class="input">
-            </div>
-            
-            <div class="subject">
-              <input type="text" placeholder="Subject" class="input">
-            </div>
-            
-            <div class="msg">
-              <textarea  class="area" placeholder="Leave a Message"></textarea>
-            </div>
-            
-            <div class="btn">Send Message</div>
-          </div>
-        
-          <footer>
+                <div>
+                    <input id="subject" type="text" placeholder="Subject" class="input">
+                </div>
+                <div>
+                    <textarea id="message" class="area" placeholder="Leave a Message"></textarea>
+                </div>
+                <p class="button"><a onclick="submit_review()">submit</a></p>
+            </form>
+            <!-- <div class="contact-form" method="post" action="">
+                <div class="container2">
+                    <p>RECIPE RECOMMENDATIONS!</p>
+                    
+                    <div class="login">
+                      <input type="text" placeholder="Your Name" class="input">
+                      <input type="text" placeholder="Your Email Address" class="input">
+                    </div>
+                    
+                    <div class="subject">
+                      <input type="text" placeholder="Subject" class="input">
+                    </div>
+                    
+                    <div class="msg">
+                      <textarea  class="area" placeholder="Leave a Message"></textarea>
+                    </div>
+                    
+                    <div class="btn">Send Message</div>
+                  </div>
+            </div> -->
+        </main>
+        <footer>
             <div class="footer-flex">
                 <h6>&copy; 2022 Easy As Pie</h6>
             <div>
@@ -52,20 +78,5 @@
             </div>
             </div>
         </footer>
-    </form>
-    </div>
-   
-    <footer>
-        <div class="footer-flex">
-            <h6>&copy; 2022 Easy As Pie</h6>
-        <div>
-        <img src="images/websitelogo1.jpg">
-        <img src="images/websitelogo2.jpg">
-        <img src="images/websiteicon3.jpg">
-        </div>
-        </div>
-    </footer>
-
-</body>
-</body>
-        
+    </body>
+</html>
